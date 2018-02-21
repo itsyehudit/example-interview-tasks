@@ -1,20 +1,20 @@
-leftpad = (string = `U R some Lazy Bun, Kid`, times = 1, char = `\xa0`, bool = false) => {
+leftpad = (string = `U R some Lazy Bun, Kid`, times = 1, char = `\xa0`, isLeft = false) => {
 
   stringin = prompt(`Choose a word:`);
   timesin = parseInt(prompt(`Please state a number:`));
   charin = prompt(`Please state a character:`);
-  bool = confirm(`Would you like to have your word of choice
+  isLeft = confirm(`Would you like to have your word of choice
 before all the other characters?`)
 
-  if (stringin === null || stringin === '') {
+  if (stringin === '') {
     stringin = string;
 }
 
- if (timesin === null || timesin === '' || isNaN(timesin)) {
+ if (timesin === '' || isNaN(timesin)) {
      timesin = times;
 }
 
-if (charin === null || charin === '') {
+if (charin === '') {
    charin = char;
 }
 
@@ -25,7 +25,7 @@ if (charin === null || charin === '') {
 but here ya go, ye stubborn Kiddo:`)
   }
 
-  if (bool === true /* || bool === undefined*/) {
+  if (isLeft === true) {
     return(`Your word&characters coctail is:
 ${stringin}${chars}.`);
     }
@@ -35,4 +35,4 @@ ${chars}${stringin}.`);
     }
 }
 
-alert(leftpad());
+document.write(leftpad());
