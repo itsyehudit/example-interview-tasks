@@ -1,8 +1,8 @@
-function leftpad(string, times, char, bool) {
+function leftpad(string, times, char, isLeft) {
     string = prompt('Choose a word:');
     times = parseInt(prompt('Please state a number:'));
     char = prompt('Please state a character:');
-    bool = confirm('Would you like to have your word of choice before all the other characters?');
+    isLeft = confirm('Would you like to have your word of choice before all the other characters?');
 
      if (string === null || string === '') {
        string = 'U R some Lazy Bun, Kid';
@@ -22,7 +22,7 @@ function leftpad(string, times, char, bool) {
       alert('I\'ve asked you for *A* character - that means ONE, but here ya go, ye stubborn Kiddo:');
     }
 
-    if (bool === false) {
+    if (isLeft === false) {
       return('Your characters&word coctail is: \n' + chars + string + '.');
       }
     else {
@@ -30,4 +30,4 @@ function leftpad(string, times, char, bool) {
       }
     }
 
-alert(leftpad());
+document.write(leftpad());
